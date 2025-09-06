@@ -47,8 +47,10 @@ export async function POST(req: Request) {
         });
 
         return NextResponse.json({ ok: true});
-    }   catch (err: any) {
-        console.error("Mail error:", err);
-        return NextResponse.json({ ok: false, error: "Failed to send email"}, { status: 500});
-    }
+    } catch (err) {
+  const msg = err instanceof Error ? err.message : String(err);
+  console.error("Mail error:", msg);
+  return NextResponse.json({ ok: false, error: "Failed to send email" }, { status: 500 });
+}
+
 }

@@ -10,7 +10,6 @@ import {useState} from "react";
 
 export default function Home() {
   const [status, setStatus] = useState<string | null>(null);
-  const [serviceOption, setServiceOption] = useState<"A" | "B" | "">("");
   const [loading, setLoading] = useState<boolean>(false);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -35,12 +34,16 @@ export default function Home() {
 
       setStatus('Submitted to server.');
       form.reset();
-    } catch (err: any) {
-      setStatus(`Error: ${err.message}`);
-    }
+    } catch (err) {
+  const message = err instanceof Error ? err.message : "Unknown error";
+  setStatus(`Error: ${message}`);
+} finally {
+  setLoading(false);
+}
 
 
-  } ``
+
+  } 
 
   return (
     <main className='min-h-screen grid place-items-center bg-[#0a1f44] p-6'>
