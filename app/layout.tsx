@@ -16,7 +16,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className="h-full bg-blue-900">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* Prevent iOS/Safari white flash/bars */}
         <meta name="theme-color" content="#0f172a" />
         <meta name="color-scheme" content="light" />
       </head>

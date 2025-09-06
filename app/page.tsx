@@ -61,7 +61,7 @@ export default function Home() {
             name="budget"
             min={0}
             className="mt-1 w-full border rounded-md p-2"
-            placeholder="800"
+            placeholder="$800"
           />
         </label>
 
@@ -88,7 +88,7 @@ export default function Home() {
             name="special-requests"
             rows={5}
             className="mt-1 w-full border rounded-md p-2"
-            placeholder="What games, streaming/recording needs, aesthetics, etc."
+            placeholder="What games you wanna play, Do you want to stream & record?, aesthetics, etc."
           />
         </label>
 
